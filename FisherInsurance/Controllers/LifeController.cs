@@ -7,4 +7,8 @@ public class LifeController : Controller
     {
     return Ok("This is the index of the LifeController");
     }
+    public IActionResult Quote()
+    {
+    return Ok("This is the quote of the LifeController");
+    }
 }

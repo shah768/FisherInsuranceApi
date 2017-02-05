@@ -7,4 +7,10 @@ public class HomepageController : Controller
     {
     return Ok("This is the index of the HomepageController");
     }
+
+    public IActionResult Quote()
+    {
+    return Ok("This is the quote of the HomepageController");
+    }
+
 }
