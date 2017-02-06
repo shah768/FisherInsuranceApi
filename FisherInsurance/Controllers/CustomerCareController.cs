@@ -9,7 +9,7 @@ public class CustomerCareController : Controller
     {
     return Ok("This is the index of the CustomerCareController");
     }
-     public IActionResult Claim()
+     public IActionResult Claims()
     {
     return Ok("This is the claims of the CustomerCareController");
     }
