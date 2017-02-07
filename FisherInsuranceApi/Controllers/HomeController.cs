@@ -1,28 +1,28 @@
 using Microsoft.AspNetCore.Mvc;
-[Route ("api/claims")]
+[Route ("api/home/quotes")]
 
-public class claimsController : Controller
+public class HomeController : Controller
 {
-    //POST api/claims
+    //POST api/home/quotes
     [HttpPost]
     public IActionResult Post([FromBody]string value)
     {
         return Created("", value);
     }
 
-    // GET api/claims/5
+    // GET api/home/quotes/5
     [HttpGet("{id}")]
     public IActionResult Get(int id)
     {
     return Ok("The id is: " + id);
     }
-    // PUT api/claims/id
+    // PUT api/home/quotes/id
     [HttpPut("{id}")]
     public IActionResult Put(int id, [FromBody]string value)
     {
     return NoContent();
     }
-    // DELETE api/claims/id
+    // DELETE api/home/quotes/id
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
