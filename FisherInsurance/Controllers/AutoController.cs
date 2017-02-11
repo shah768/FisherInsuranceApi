@@ -6,10 +6,12 @@ public class AutoController : Controller
     
     public IActionResult Index()
     {
-    return Ok("This is the index of the AutoController");
+    return View();
+    //return Ok("This is the index of the AutoController");
     }
  public IActionResult Quote()
     {
-    return Ok("This is the Quote of the AutoController");
+    return View();
+    //return Ok("This is the Quote of the AutoController");
     }
 }
