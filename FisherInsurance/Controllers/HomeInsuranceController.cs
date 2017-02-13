@@ -2,6 +2,7 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 namespace FisherInsurance.Models {
 
+[Route ("Homeinsurance")]
 public class HomeInsuranceController : Controller
 
 {
