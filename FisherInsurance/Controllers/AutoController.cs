@@ -1,4 +1,6 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
+namespace FisherInsurance.Models{
 
 public class AutoController : Controller
 
@@ -9,9 +11,16 @@ public class AutoController : Controller
     return View();
     //return Ok("This is the index of the AutoController");
     }
- public IActionResult Quote()
+    public IActionResult Quote()
     {
-    return View();
-    //return Ok("This is the Quote of the AutoController");
+        Quote quote = new Quote
+        {
+            Id = 345,
+            Product = "Auto Insurance",
+            ExpireDate = DateTime.Now.AddDays(45),
+            Price = 45.00M
+        };
+        return View(quote);
     }
+}
 }
