@@ -28,7 +28,7 @@ public class AutoController : Controller
     }
     // DELETE api/auto/quotes/id
     [HttpDelete("{id}")]
-     public IActionResult Delete([FromBody] int id)
+     public IActionResult Delete(int id)
     {
         db.DeleteQuote(id);
         return Ok();
