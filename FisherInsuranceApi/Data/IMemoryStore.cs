@@ -13,11 +13,8 @@ namespace FisherInsuranceApi.Data
         Claim CreateClaim(Claim claim);
 
         IEnumerable<Claim> RetrieveAllClaims {get; }
-
         Claim RetrieveClaim(int id);
-
-        Claim UpdateClaim(Claim claim);
-        
+        Claim UpdateClaim(Claim claim);        
         void DeleteClaim(int id);
     }
 }

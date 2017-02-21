@@ -5,25 +5,20 @@ using Microsoft.AspNetCore.Mvc;
 
 public class ClaimsController : Controller
 {
-
-    [HttpGet]
-    public IActionResult GetClaim()
+    
+    //POST api/claims
+    [HttpPost]
+    public IActionResult Post([FromBody] Claim claim)
     {
-         return Ok(db.RetrieveAllClaim);
-     }
+        return Ok(db.CreateClaim(claim));
+    }
 
+  
     // GET api/claims/5
     [HttpGet("{id}")]
     public IActionResult Get(int id)
     {
     return Ok("The id is: " + id);
-    }
-
-    //POST api/claims
-    [HttpPost]
-    public IActionResult Post([FromBody] Claim claim)
-    {
-        return Ok(db.CreateCliam(claim));
     }
 
     // PUT api/claims/id
@@ -38,5 +33,15 @@ public class ClaimsController : Controller
     public IActionResult Delete(int id)
     {
     return Delete(id);
+     }
+     private IMemoryStore db;
+    public ClaimsController(IMemoryStore repo)
+    {
+        db = repo;
     }
+      [HttpGet]
+    public IActionResult GetClaim()
+    {
+         return Ok(db.RetrieveAllClaims);
+     }
 }
