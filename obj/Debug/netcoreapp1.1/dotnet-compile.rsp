@@ -1,5 +1,5 @@
---temp-output:C:\AMIS3610\fisherInsuranceApi\obj\Debug\netcoreapp1.1\
---out:C:\AMIS3610\fisherInsuranceApi\bin\Debug\netcoreapp1.1\fisherInsuranceApi.dll
+--temp-output:C:\AMIS3610\FisherInsuranceApi\obj\Debug\netcoreapp1.1\
+--out:C:\AMIS3610\FisherInsuranceApi\bin\Debug\netcoreapp1.1\FisherInsuranceApi.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_1
@@ -8,7 +8,7 @@
 --suppress-warning:CS1705
 --optimize:False
 --emit-entry-point:True
---output-name:fisherInsuranceApi
+--output-name:FisherInsuranceApi
 --file-version:1.0.0.0
 --version:1.0.0.0
 --informational-version:1.0.0
@@ -171,10 +171,12 @@
 --reference:C:\Users\shah7_000\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\shah7_000\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\shah7_000\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\AMIS3610\fisherInsuranceApi\obj\Debug\netcoreapp1.1\fisherInsuranceApidotnet-compile.deps.json",fisherInsuranceApi.deps.json
-C:\AMIS3610\fisherInsuranceApi\Program.cs
-C:\AMIS3610\fisherInsuranceApi\Startup.cs
-C:\AMIS3610\fisherInsuranceApi\Controllers\AutoController.cs
-C:\AMIS3610\fisherInsuranceApi\Controllers\ClaimsController.cs
-C:\AMIS3610\fisherInsuranceApi\Controllers\HomeController.cs
-C:\AMIS3610\fisherInsuranceApi\Controllers\LifeController.cs
+--resource:"C:\AMIS3610\FisherInsuranceApi\obj\Debug\netcoreapp1.1\FisherInsuranceApidotnet-compile.deps.json",FisherInsuranceApi.deps.json
+C:\AMIS3610\FisherInsuranceApi\Program.cs
+C:\AMIS3610\FisherInsuranceApi\Startup.cs
+C:\AMIS3610\FisherInsuranceApi\Controllers\ClaimsController.cs
+C:\AMIS3610\FisherInsuranceApi\Controllers\QuotesController.cs
+C:\AMIS3610\FisherInsuranceApi\Data\IMemoryStore.cs
+C:\AMIS3610\FisherInsuranceApi\Data\MemoryStore.cs
+C:\AMIS3610\FisherInsuranceApi\Models\Claim.cs
+C:\AMIS3610\FisherInsuranceApi\Models\Quote.cs

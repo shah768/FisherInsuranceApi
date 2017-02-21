@@ -14,7 +14,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v1.1": {
-      "fisherInsuranceApi/1.0.0": {
+      "FisherInsuranceApi/1.0.0": {
         "dependencies": {
           "Microsoft.NETCore.App": "1.1.0",
           "Microsoft.AspNetCore.Mvc": "1.1.0",
@@ -31,10 +31,10 @@
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.1.0"
         },
         "runtime": {
-          "fisherInsuranceApi.dll": {}
+          "FisherInsuranceApi.dll": {}
         },
         "compile": {
-          "fisherInsuranceApi.dll": {}
+          "FisherInsuranceApi.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/1.1.0": {
@@ -2867,7 +2867,7 @@
     }
   },
   "libraries": {
-    "fisherInsuranceApi/1.0.0": {
+    "FisherInsuranceApi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
