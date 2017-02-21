@@ -2,9 +2,9 @@ using FisherInsuranceApi.Data;
 using FisherInsuranceApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
-[Route ("api/auto/quotes")]
+[Route ("api/quotes")]
 
-public class AutoController : Controller
+public class QuotesController : Controller
 {
 
     //POST api/auto/quotes
@@ -34,7 +34,7 @@ public class AutoController : Controller
         return Ok();
     }
     private IMemoryStore db;
-    public AutoController(IMemoryStore repo)
+    public QuotesController(IMemoryStore repo)
     {
         db = repo;
     }
