@@ -4,12 +4,16 @@ import { HttpModule } from '@angular/http';
 import 'rxjs/Rx';
 
 // import our application component
-import { AppComponent } from './components/appdef/app.component';
-import { HomeComponent } from './components/home/home.component'
+import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { NavBarComponent } from './components/navbar/navbar.component';
+
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        NavBarComponent
+
     ],
     imports: [
         BrowserModule,
