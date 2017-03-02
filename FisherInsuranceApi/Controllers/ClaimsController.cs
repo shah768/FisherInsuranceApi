@@ -1,47 +1,56 @@
+using Microsoft.AspNetCore.Mvc;
 using FisherInsuranceApi.Data;
 using FisherInsuranceApi.Models;
-using Microsoft.AspNetCore.Mvc;
-[Route ("api/claims")]
 
+[Route ("api/claims")]
 public class ClaimsController : Controller
 {
-    
-    //POST api/claims
+    private readonly FisherContext db;
+    public ClaimsController(FisherContext context)
+    {
+        db = context;
+    }
+    [HttpGet]
+    public IActionResult GetClaims()
+    {
+        return Ok(db.Claims);
+    }
+    [HttpGet("{id}", Name = "GetClaim")]
+    public IActionResult Get(int id)
+    {
+        return Ok(db.Claims.Find(id));
+    }
     [HttpPost]
     public IActionResult Post([FromBody] Claim claim)
     {
-        return Ok(db.CreateClaim(claim));
+        var newClaim = db.Claims.Add(claim);
+        db.SaveChanges();
+        return CreatedAtRoute("GetClaim", new { id = claim.Id }, claim);
     }
-
-  
-    // GET api/claims/5
-    [HttpGet("{id}")]
-    public IActionResult Get(int id)
-    {
-    return Ok("The id is: " + id);
-    }
-
-    // PUT api/claims/id
     [HttpPut("{id}")]
-    public IActionResult Put(int id, [FromBody]string value)
+    public IActionResult Put(int id, [FromBody] Claim claim)
     {
-    return NoContent();
+        var newClaim = db.Claims.Find(id);
+        if (newClaim == null)
+        {
+            return NotFound();
+        }
+        newClaim = claim;
+        db.SaveChanges();
+        return Ok(newClaim);
     }
-
-    // DELETE api/claims/id
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-    return Delete(id);
-     }
-     private IMemoryStore db;
-    public ClaimsController(IMemoryStore repo)
-    {
-        db = repo;
+        var claimToDelete = db.Claims.Find(id);
+        if (claimToDelete == null)
+        {
+            return NotFound();
+        }
+        db.Claims.Remove(claimToDelete);
+        db.SaveChangesAsync();
+        return NoContent();
+
+
     }
-      [HttpGet]
-    public IActionResult GetClaim()
-    {
-         return Ok(db.RetrieveAllClaims);
-     }
 }
