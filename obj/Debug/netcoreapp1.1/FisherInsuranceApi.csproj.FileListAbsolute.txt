@@ -1,0 +1,8 @@
+C:\AMIS3610\FisherInsuranceAPI\bin\Debug\netcoreapp1.1\FisherInsuranceApi.deps.json
+C:\AMIS3610\FisherInsuranceAPI\bin\Debug\netcoreapp1.1\FisherInsuranceApi.runtimeconfig.json
+C:\AMIS3610\FisherInsuranceAPI\bin\Debug\netcoreapp1.1\FisherInsuranceApi.runtimeconfig.dev.json
+C:\AMIS3610\FisherInsuranceAPI\obj\Debug\netcoreapp1.1\FisherInsuranceApi.AssemblyInfo.cs
+C:\AMIS3610\FisherInsuranceAPI\bin\Debug\netcoreapp1.1\FisherInsuranceApi.dll
+C:\AMIS3610\FisherInsuranceAPI\bin\Debug\netcoreapp1.1\FisherInsuranceApi.pdb
+C:\AMIS3610\FisherInsuranceAPI\obj\Debug\netcoreapp1.1\FisherInsuranceApi.dll
+C:\AMIS3610\FisherInsuranceAPI\obj\Debug\netcoreapp1.1\FisherInsuranceApi.pdb
