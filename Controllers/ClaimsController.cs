@@ -1,47 +1,63 @@
+using Microsoft.AspNetCore.Mvc;
 using FisherInsuranceApi.Data;
 using FisherInsuranceApi.Models;
-using Microsoft.AspNetCore.Mvc;
-[Route ("api/claims")]
 
-public class ClaimsController : Controller
+
+    [RouteAttribute("api/claims")]
+    public class ClaimsController : Controller
 {
-    
-    //POST api/claims
-    [HttpPost]
+    private readonly FisherContext db;
+     public ClaimsController(FisherContext context)
+    {
+            db = context;
+    }
+
+    [HttpGet]
+    public IActionResult GetClaims()
+    {
+        return Ok(db.Claims);
+    }
+        [HttpPost]
     public IActionResult Post([FromBody] Claim claim)
     {
-        return Ok(db.CreateClaim(claim));
-    }
+        var newClaim = db.Claims.Add(claim);
+        db.SaveChanges();
 
-  
-    // GET api/claims/5
-    [HttpGet("{id}")]
+        return CreatedAtRoute("GetClaim", new { id = claim.Id }, claim);
+    }
+    [HttpGet("{id}", Name = "GetClaim")]
     public IActionResult Get(int id)
     {
-    return Ok("The id is: " + id);
+        return Ok(db.Claims.Find(id));
     }
-
-    // PUT api/claims/id
     [HttpPut("{id}")]
-    public IActionResult Put(int id, [FromBody]string value)
+    public IActionResult Put(int id, [FromBody] Claim newClaim)
     {
-    return NoContent();
-    }
+        var claim = db.Claims.Find(id);
+        if (newClaim == null)
+        {
+            return NotFound();
+        }
 
-    // DELETE api/claims/id
+        claim = newClaim;
+        claim.Id = id;
+
+        db.Update(claim);
+        db.SaveChanges();
+
+        return Ok(newClaim);
+    }
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-    return Delete(id);
-     }
-     private IMemoryStore db;
-    public ClaimsController(IMemoryStore repo)
-    {
-        db = repo;
+        var claimToDelete = db.Claims.Find(id);
+        if (claimToDelete == null)
+        {
+            return NotFound();
+        }
+        db.Claims.Remove(claimToDelete);
+        db.SaveChangesAsync();
+        return NoContent();
+
     }
-      [HttpGet]
-    public IActionResult GetClaim()
-    {
-         return Ok(db.RetrieveAllClaims);
-     }
-}
+    }
